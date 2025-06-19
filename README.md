@@ -1,2 +1,1 @@
-# foundo-frontend
-LLC Formation Service
+# Leegal - Under Development
