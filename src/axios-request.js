@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const serverURL = "http://localhost:8000"
+const serverURL = "https://foundo-backend.vercel.app"
 // const serverURL = "https://api.leegal.co"
 
 const axiosRequest = axios.create({
