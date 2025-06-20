@@ -1,6 +1,6 @@
 import axiosRequest from "./axios-request"
 
- const serverURL = "http://localhost:8000"
+ const serverURL = "https://foundo-backend.vercel.app/"
 // const serverURL = "https://api.leegal.co"
 
 const post_data = async (url, body) => {
