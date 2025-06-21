@@ -2,6 +2,8 @@ import { Button, IconButton, useMediaQuery, Drawer, useTheme } from "@mui/materi
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
+import { useSelector } from 'react-redux';
+
 
 const Header = () => {
 
@@ -133,7 +135,7 @@ const Header = () => {
                 Exclusive Discounts for International Entrepreneurs - Available for a Limited Time! Contact Us on WhatsApp.
             </div>
             <div style={styles.navContainer}>
-                <img loading="lazy" src="https://buzzfiling.com/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
+                <img loading="lazy" src="/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
                 <div style={styles.navItems}>
                     <span onClick={() => {
                         navigate('/');
@@ -185,6 +187,27 @@ const Header = () => {
                         <Button
                             onClick={handlecontactbuzzfilling} // Add onClick handler
                             variant="contained" sx={styles.getStartedButton}>Get Started</Button>
+
+                             {user_data?.is_user ? (
+                <Button
+                    onClick={() => {
+                        navigate('/dashboard');
+                        window.scrollTo(0, 0);
+                    }}
+                    variant="contained"
+                    sx={styles.getStartedButton}
+                >
+                    My Dashboard
+                </Button>
+            ) : (
+                <Button
+                    onClick={() => navigate('/login')}
+                    variant="contained"
+                    sx={styles.loginButton}
+                >
+                    Login
+                </Button>
+            )}
                     </div>
                 </div>
             </Drawer>
