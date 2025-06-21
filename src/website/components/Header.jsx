@@ -2,7 +2,6 @@ import { Button, IconButton, useMediaQuery, Drawer, useTheme } from "@mui/materi
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
-import { useSelector } from "react-redux";
 
 const Header = () => {
 
@@ -10,16 +9,20 @@ const Header = () => {
     const theme = useTheme();
     const matches_md = useMediaQuery(theme.breakpoints.down('md'));
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const { user_data } = useSelector(state => state.user);
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
     };
 
-    const handleStartBusiness = () => {
-        navigate('/pricing');
-        window.scrollTo(0, 0)
-    };
+    
+
+    const handlecontactbuzzfilling  = () => {
+  const phoneNumber = "923394882800"; // Without '+' and spaces
+  const message = "Hi Buzz Filing team! I'm interested in registering my business in the United States. Could you please share more details on how I can get started?";
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+};
+
 
     const styles = {
         container: {
@@ -40,15 +43,11 @@ const Header = () => {
             display: 'flex',
             justifyContent: 'space-between',
             alignItems: 'center',
-            padding: matches_md ? '0 10px' : '0 60px',
-            height: matches_md ? 60 : 70,
-            background: '#FEF2F3',
-            width: matches_md ? '90%' : '80%',
-            margin: '2% auto 0',
-            borderRadius: '50px'
+            padding: matches_md ? '0 10px' : '0 80px',
+            height: 70,
         },
         logo: {
-            width: matches_md ? '25%' : '12%',
+            width: matches_md ? '40%' : '15%',
             cursor: 'pointer',
         },
         navItems: {
@@ -63,25 +62,24 @@ const Header = () => {
             gap: '10px',
         },
         signInButton: {
-            borderColor: '#EA580C',
+            borderColor: '#EA2024',
             padding: '7px 0',
-            color: '#EA580C',
+            color: '#EA2024',
             borderRadius: 3,
             '&:hover': {
-                borderColor: '#EA580C',
+                borderColor: '#EA2024',
                 backgroundColor: 'white',
             },
             '&:focus': {
                 outline: 'none',
-                borderColor: '#EA580C',
+                borderColor: '#EA2024',
             },
         },
         getStartedButton: {
-            background: '#EA580C',
+            background: '#EA2024',
             color: 'white',
-            textTransform: 'capitalize',
-            padding: '7px 20px',
-            borderRadius: '50px',
+            padding: '10px 15px',
+            borderRadius: 3,
             boxShadow: 'none',
             '&:hover': {
                 backgroundColor: '#d0191f',
@@ -89,26 +87,7 @@ const Header = () => {
             },
             '&:focus': {
                 outline: 'none',
-                backgroundColor: '#EA580C',
-            },
-        },
-        loginButton: {
-            background: '#fff',
-            border: '1px solid #E7E7E7',
-            color: '#000',
-            padding: '7px 20px',
-            borderRadius: '50px',
-            textTransform: 'capitalize',
-            boxShadow: 'none',
-            '&:hover': {
-                backgroundColor: 'black',
-                boxShadow: 'none',
-                border: '1px solid #000',
-                color: 'white'
-            },
-            '&:focus': {
-                outline: 'none',
-                backgroundColor: '#EA580C',
+                backgroundColor: '#EA2024',
             },
         },
         divider: {
@@ -148,51 +127,42 @@ const Header = () => {
         },
     };
 
-
-
     return (
         <div style={styles.container}>
-            {/* <div style={styles.headerBar}>
-                Use Coupon Code: START50 and get exclusive $50 Discount instantly 🎉. Available for a Limited Time!
-            </div> */}
+            <div style={styles.headerBar}>
+                Exclusive Discounts for International Entrepreneurs - Available for a Limited Time! Contact Us on WhatsApp.
+            </div>
             <div style={styles.navContainer}>
-                <img loading="lazy" src="/images/logo.svg" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
+                <img loading="lazy" src="https://buzzfiling.com/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
                 <div style={styles.navItems}>
                     <span onClick={() => {
                         navigate('/');
                         window.scrollTo(0, 0);
                     }}>Home</span>
-                    <a href="/pricing" style={{ textDecoration: 'none', color: 'black' }}><span>Pricing</span></a>
-                    <a href="/faq" style={{ textDecoration: 'none', color: 'black' }}><span>FAQ</span></a>
-                    {/* <a href="/about" style={{ textDecoration: 'none', color: 'black' }}><span>About</span></a> */}
-                    <a href="https://blog.leegal.co/" target="_blank" style={{ textDecoration: 'none', color: 'black' }}><span>Blog</span></a>
+                    <span onClick={() => {
+                        navigate('/pricing');
+                        window.scrollTo(0, 0);
+                    }}>Pricing</span>
+                    <span onClick={() => {
+                        navigate('/about');
+                        window.scrollTo(0, 0);
+                    }}>About</span>
+                    <span onClick={() => {
+                        navigate('/faq');
+                        window.scrollTo(0, 0);
+                    }}>FAQ</span>
                 </div>
                 <div style={styles.buttonContainer}>
-                    {
-                        user_data?.is_user ? (
-                            <Button
-                                onClick={() => { navigate('/dashboard'); window.scrollTo(0, 0) }}
-                                variant="contained" sx={styles.getStartedButton}>My Dashboard
-                            </Button>
-                        ) : (
-                            <>
-                                <Button
-                                    onClick={() => navigate('/login')}
-                                    variant="contained" sx={styles.loginButton}>Login
-                                </Button>
-                                <Button
-                                    onClick={handleStartBusiness}
-                                    variant="contained" sx={styles.getStartedButton}>Start Your business
-                                </Button>
-                            </>
-                        )
-                    }
+                    {/* <Button variant="outlined" sx={styles.signInButton}>Sign In</Button> */}
+                    <Button
+                        onClick={handlecontactbuzzfilling} // Add onClick handler
+                        variant="contained" sx={styles.getStartedButton}>Get Started</Button>
                 </div>
                 <IconButton style={styles.menuIcon} onClick={handleDrawerToggle}>
                     <MenuIcon />
                 </IconButton>
             </div>
-            {/* <div style={styles.divider}></div> */}
+            <div style={styles.divider}></div>
             <Drawer
                 anchor="right"
                 open={drawerOpen}
@@ -206,30 +176,15 @@ const Header = () => {
                 }}
             >
                 <div style={styles.drawerContent}>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/'); window.scrollTo(0, 0); handleDrawerToggle(); }}>Home</div>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/pricing'); window.scrollTo(0, 0); handleDrawerToggle(); }}>Pricing</div>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/faq'); window.scrollTo(0, 0); handleDrawerToggle(); }}>FAQ</div>
-                    <a href="https://blog.leegal.co/" target="_blank" style={{ textDecoration: 'none' }}><div style={styles.drawerNavItem} onClick={() => { handleDrawerToggle(); }}>Blog</div></a>
+                    <div style={styles.drawerNavItem} onClick={() => { navigate('/'); handleDrawerToggle(); }}>Home</div>
+                    <div style={styles.drawerNavItem} onClick={() => { navigate('/pricing'); handleDrawerToggle(); }}>Pricing</div>
+                    <div style={styles.drawerNavItem} onClick={() => { navigate('/about'); handleDrawerToggle(); }}>About</div>
+                    <div style={styles.drawerNavItem} onClick={() => { navigate('/faq'); handleDrawerToggle(); }}>FAQ</div>
                     <div style={styles.drawerButtonContainer}>
-                        {
-                            user_data?.is_user ? (
-                                <Button
-                                    onClick={() => { navigate('/dashboard'); window.scrollTo(0, 0) }}
-                                    variant="contained" sx={styles.getStartedButton}>My Dashboard
-                                </Button>
-                            ) : (
-                                <>
-                                    <Button
-                                        onClick={() => navigate('/login')}
-                                        variant="contained" sx={styles.loginButton}>Login
-                                    </Button>
-                                    <Button
-                                        onClick={handleStartBusiness}
-                                        variant="contained" sx={styles.getStartedButton}>Get Started
-                                    </Button>
-                                </>
-                            )
-                        }
+                        {/* <Button variant="outlined" sx={styles.signInButton}>Sign In</Button> */}
+                        <Button
+                            onClick={handlecontactbuzzfilling} // Add onClick handler
+                            variant="contained" sx={styles.getStartedButton}>Get Started</Button>
                     </div>
                 </div>
             </Drawer>
