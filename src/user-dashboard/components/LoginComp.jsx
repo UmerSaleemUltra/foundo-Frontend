@@ -15,25 +15,22 @@ import { login } from "../../redux/slices/user-slice";
 import { Toaster, toast } from 'react-hot-toast';
 
 export default function LoginComp() {
-
     const theme = useTheme();
-    const matches1 = useMediaQuery(theme.breakpoints.down('md'));
-    const matches2 = useMediaQuery(theme.breakpoints.down(800));
-    const matches3 = useMediaQuery(theme.breakpoints.down(500));
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { user_data } = useSelector(state => state.user);
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
-    const dispatch = useDispatch()
-    const [loader, setLoader] = useState(false)
-    const { user_data } = useSelector(state => state.user);
+    const [loader, setLoader] = useState(false);
 
     const handleClickShowPassword = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword);
+        setShowPassword((prev) => !prev);
     };
 
     const handleMouseDownPassword = (event) => {
@@ -42,11 +39,15 @@ export default function LoginComp() {
 
     const validate = () => {
         let valid = true;
-        if (!email) {
+
+        const trimmedEmail = email.trim();
+        const isEmailOrPhone = /^\S+@\S+\.\S+$/.test(trimmedEmail) || /^\d{10,15}$/.test(trimmedEmail);
+
+        if (!trimmedEmail) {
             setEmailError("Email or Phone Number is required");
             valid = false;
-        } else if (!/\S+@\S+\.\S+/.test(email)) {
-            setEmailError("Email address is invalid");
+        } else if (!isEmailOrPhone) {
+            setEmailError("Enter a valid email or phone number");
             valid = false;
         } else {
             setEmailError("");
@@ -62,33 +63,34 @@ export default function LoginComp() {
         return valid;
     };
 
-   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-        try {
-            setLoader(true);
-            const data = await post_data("user/user-login", { email, password });
-            setLoader(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (validate()) {
+            try {
+                setLoader(true);
+                const trimmedEmail = email.trim();
+                const data = await post_data("user/user-login", { email: trimmedEmail, password });
 
-            if (data?.status === true) {
-                dispatch(login(data?.data?.user));
-                localStorage.setItem("authToken", data?.data?.token);
-                toast.success("Login Successfully");
-                setEmail('');
-                setPassword('');
-                navigate('/dashboard');
-            } else {
-                toast.error(data?.message || "Invalid credentials");
+                if (data?.status === true) {
+                    dispatch(login(data?.data?.user));
+                    localStorage.setItem("authToken", data?.data?.token);
+                    toast.success("Login Successfully");
+                    setEmail('');
+                    setPassword('');
+                    navigate('/dashboard');
+                } else {
+                    toast.error(data?.message || "Invalid credentials");
+                }
+
+                setLoader(false);
+            } catch (error) {
+                setLoader(false);
+                const message = error?.response?.data?.message || "Network error or server issue";
+                toast.error(message);
             }
-        } catch (error) {
-            setLoader(false);
-            const message = error?.response?.data?.message || "Network error or server issue";
-            toast.error(message);
         }
-    }
-};
-
-
+    };
+    
     return (
         <div style={styles.container}>
 
