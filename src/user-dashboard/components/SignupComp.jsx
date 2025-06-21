@@ -87,14 +87,14 @@ export default function SignupComp() {
                 setLoader(false);
 
                 if (data?.status === true) {
-                    setOtpForm(true);
-                    setEmailForm(false);
-                }
-                else {
-                    setEmail("");
-                    setPassword("");
-                    toast.error(data?.response?.data?.message || "Email already exist")
-                }
+    setOtpForm(true);
+    setEmailForm(false);
+} else {
+    setEmail("");
+    setPassword("");
+    toast.error(data?.response?.data?.message || "Email already exist");
+}
+
             } catch (error) {
                 setLoader(false);
             }

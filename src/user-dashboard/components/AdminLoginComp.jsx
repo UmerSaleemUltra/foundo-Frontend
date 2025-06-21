@@ -63,36 +63,30 @@ export default function AdminLoginComp() {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (validate()) {
-            try {
-                setLoader(true);
-                const data = await post_data("super-admin/super-admin-login", { email, password })
-                if (data?.status === true) {
-                    dispatch(login(data?.data?.user));
-                    localStorage.setItem("authToken", data?.data?.token);
-                    toast.success("Login Successfully")
-                    setEmail('');
-                    setPassword('');
-                    navigate('/admin/dashboard')
-                }
-                else {
-                    setLoader(false);
-                    toast.error(data?.response?.data?.message || "Something went wrong")
-                    // if (data.response.data.message === "Password Incorrect") {
-                    //     setLoader(false);
-                    //     toast.error("Password Incorrect")
-                    // }
-                    // if (data.response.data.message === "Super Admin does not exist") {
-                    //     setLoader(false);
-                    //     toast.error("Admin not exist")
-                    // }
-                }
-            } catch (error) {
-                setLoader(false);
+    e.preventDefault();
+    if (validate()) {
+        try {
+            setLoader(true);
+            const data = await post_data("super-admin/super-admin-login", { email, password });
+            setLoader(false);
+
+            if (data?.status === true) {
+                dispatch(login(data?.data?.user));
+                localStorage.setItem("authToken", data?.data?.token);
+                toast.success("Login Successfully");
+                setEmail('');
+                setPassword('');
+                navigate('/admin/dashboard');
+            } else {
+                toast.error(data?.message || "Invalid credentials");
             }
+        } catch (error) {
+            setLoader(false);
+            const message = error?.response?.data?.message || "Server error. Please try again.";
+            toast.error(message);
         }
     }
+};
 
     return (
         <div style={styles.container}>
