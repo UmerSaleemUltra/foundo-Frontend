@@ -176,7 +176,7 @@ const Contact = ({ screen }) => {
                             type="submit" className="submit-btn"
                             disabled={loading}
                             style={{
-                                background: '#EA2024',
+                                background: '#EA580C',
                                 color: 'white',
                                 padding: isMobile ? '10px 25px' : '10px 25px',
                                 borderRadius: '50px',

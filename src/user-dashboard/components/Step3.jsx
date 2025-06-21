@@ -84,8 +84,8 @@ export default function Step3({ selectedAddons, setSelectedAddons, totalAddonPri
             marginBottom: '5%',
         },
         button: {
-            // backgroundColor: '#EA2024',
-            color: '#EA2024',
+            // backgroundColor: '#EA580C',
+            color: '#EA580C',
             marginTop: '10px',
             textTransform: 'none',
             borderRadius: 12,
@@ -163,7 +163,7 @@ export default function Step3({ selectedAddons, setSelectedAddons, totalAddonPri
                             <Button startIcon={<KeyboardBackspaceIcon />} onClick={onPrev} style={{ background: 'black', color: 'white', margin: '44px 0px 44px', borderRadius: '50px', padding: '1% 3%' }}>
                                 Back
                             </Button>
-                            <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA2024', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
+                            <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA580C', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
                                 Next
                             </Button>
 

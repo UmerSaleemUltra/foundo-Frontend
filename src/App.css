@@ -27,7 +27,7 @@ h4 {
 
 
 .css-1u4zpwo-MuiSvgIcon-root-MuiStepIcon-root.Mui-active {
-  color: #EA2024 !important;
+  color: #EA580C !important;
 }
 
 
@@ -63,7 +63,7 @@ h4 {
 }
 
 .gradientText {
-  background: linear-gradient(to right, #EA2024, #EA2024);
+  background: linear-gradient(to right, #EA580C, #EA580C);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -101,7 +101,7 @@ h4 {
   margin: 0;
   padding: 6%;
   border-radius: 10px;
-  background: linear-gradient(to right, #EA2024, #EA2024);
+  background: linear-gradient(to right, #EA580C, #EA580C);
   color: white;
   border-radius: 10px;
 }
@@ -1167,7 +1167,7 @@ h4 {
 .add-note {
   display: block;
   margin: 10px 0;
-  color: #EA2024;
+  color: #EA580C;
   text-decoration: underline;
 }
 
@@ -1244,7 +1244,7 @@ h4 {
 
 .folder-icon {
   font-size: 3rem;
-  color: #EA2024;
+  color: #EA580C;
 }
 
 .more-options-icon {
@@ -1352,7 +1352,7 @@ hr {
 }
 
 .css-5xe99f-MuiLinearProgress-bar1 {
-  background-color: #EA2024 !important;
+  background-color: #EA580C !important;
 }
 
 
@@ -1390,7 +1390,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 6rem;
-  background: #ea2024;
+  background: #EA580C;
   /* background-image: url('/public//images//pricing-bg.svg'); */
   background-repeat: no-repeat;
   background-size: cover;
@@ -1454,7 +1454,7 @@ hr {
 }
 
 .start-business-btn {
-  background-color: #EA2024;
+  background-color: #EA580C;
   color: white;
   padding: 0.75rem 1.5rem;
   font-size: 14px;
@@ -1509,7 +1509,7 @@ hr {
   justify-content: space-between;
   align-items: center;
   padding: 2.5rem 3.5rem;
-  background-color: #EA2024;
+  background-color: #EA580C;
   color: white;
 }
 
@@ -1666,7 +1666,7 @@ textarea {
 }
 
 .submit-btn {
-  background-color: #EA2024;
+  background-color: #EA580C;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -1875,7 +1875,7 @@ textarea {
 /* 4 – CURRENT ("process/active") step */
 .custom-step-gap .ant-steps-item-process .ant-steps-item-title,
 .custom-step-gap .ant-steps-item-process .ant-steps-item-description {
-  color: #EA2024 !important;
+  color: #EA580C !important;
 }
 
 /* 5 – COMPLETED ("finish") step */
@@ -1887,15 +1887,15 @@ textarea {
 /* 6 – HOVER (clickable steps) */
 .custom-step-gap .ant-steps-item:hover .ant-steps-item-title,
 .custom-step-gap .ant-steps-item:hover .ant-steps-item-description {
-  color: #EA2024 !important;
+  color: #EA580C !important;
   cursor: pointer;
 }
 
 /* Step circle styles */
 /* 1 – Active step circle */
 .custom-step-gap .ant-steps-item-process .ant-steps-item-icon {
-  background-color: #EA2024;
-  border-color: #EA2024;
+  background-color: #EA580C;
+  border-color: #EA580C;
 }
 
 .custom-step-gap .ant-steps-item-process .ant-steps-icon {
@@ -1927,8 +1927,8 @@ textarea {
 
 /* 4 – Hover effect for step circle */
 .custom-step-gap .ant-steps-item:not(.ant-steps-item-active):not(.ant-steps-item-finish):hover .ant-steps-item-icon {
-  border-color: #EA2024 !important;
-  background-color: #EA2024 !important;
+  border-color: #EA580C !important;
+  background-color: #EA580C !important;
 }
 
 .custom-step-gap .ant-steps-item:not(.ant-steps-item-active):not(.ant-steps-item-finish):hover .ant-steps-icon {
@@ -1938,7 +1938,7 @@ textarea {
 /* Connector line styles */
 /* 1 – Active step's connector line */
 .custom-step-gap .ant-steps-item-process .ant-steps-item-tail::after {
-  background-color: #EA2024 !important;
+  background-color: #EA580C !important;
 }
 
 /* 2 – Completed step's connector line */

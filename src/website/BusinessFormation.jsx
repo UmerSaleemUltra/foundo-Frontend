@@ -687,8 +687,8 @@ const BusinessFormation = () => {
                             onClick={() => setCurrentStep(currentStep - 1)}
                             style={{
                                 backgroundColor: 'white',
-                                borderColor: '#EA2024',
-                                color: '#EA2024',
+                                borderColor: '#EA580C',
+                                color: '#EA580C',
                                 padding: '10px 50px',
                             }}
                         >
@@ -700,8 +700,8 @@ const BusinessFormation = () => {
                             size="large"
                             onClick={() => handleClickProceed()}
                             style={{
-                                backgroundColor: '#EA2024',
-                                borderColor: '#EA2024',
+                                backgroundColor: '#EA580C',
+                                borderColor: '#EA580C',
                                 color: 'white',
                                 padding: '10px 50px',
                             }}

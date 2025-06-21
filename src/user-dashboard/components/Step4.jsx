@@ -113,7 +113,7 @@ export default function Step4({ onSubmit, onPrev, totalAddonPrice, loading, setS
                                 <ShoppingCartIcon
                                     sx={{
                                         fontSize: matches_md ? 30 : 40,
-                                        color: '#EA2024',
+                                        color: '#EA580C',
                                     }}
                                 />
                             </Grid>
@@ -162,7 +162,7 @@ export default function Step4({ onSubmit, onPrev, totalAddonPrice, loading, setS
                                                             style={{
                                                                 cursor: 'pointer',
                                                                 fontSize: 16,
-                                                                color: '#EA2024',
+                                                                color: '#EA580C',
                                                                 marginLeft: 10,
                                                             }}
                                                         />
@@ -201,7 +201,7 @@ export default function Step4({ onSubmit, onPrev, totalAddonPrice, loading, setS
                                                 onClick={handleApplyCoupon}
                                                 disabled={isApplyingCoupon}
                                                 style={{
-                                                    backgroundColor: '#EA2024',
+                                                    backgroundColor: '#EA580C',
                                                     color: 'white',
                                                     textTransform: 'none',
                                                     boxShadow: 'none',
@@ -242,7 +242,7 @@ export default function Step4({ onSubmit, onPrev, totalAddonPrice, loading, setS
                             onClick={onSubmit}
                             style={{
                                 gap: 10,
-                                background: '#EA2024',
+                                background: '#EA580C',
                                 color: 'white',
                                 margin: '44px 0px 44px auto',
                             }}
@@ -253,7 +253,7 @@ export default function Step4({ onSubmit, onPrev, totalAddonPrice, loading, setS
                         <Button startIcon={<KeyboardBackspaceIcon />} onClick={onPrev} style={{ background: 'black', color: 'white', margin: '44px 0px 44px', borderRadius: '50px', padding: '1% 3%' }}>
                             Back
                         </Button>
-                        <Button endIcon={<EastIcon />} onClick={() => onSubmit({ finalPrice: convertToINR(Math.ceil(planAmount + totalAddonPrice - discount)) })} style={{ background: '#EA2024', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
+                        <Button endIcon={<EastIcon />} onClick={() => onSubmit({ finalPrice: convertToINR(Math.ceil(planAmount + totalAddonPrice - discount)) })} style={{ background: '#EA580C', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
                             {loading ? 'Place Order...' : 'Place Order'}
                         </Button>
 

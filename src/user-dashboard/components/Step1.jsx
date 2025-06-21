@@ -70,7 +70,7 @@ export default function Step1({
                     <Grid container spacing={3} style={{}}>
                         <Grid item xs={12}>
                             <div style={{ fontWeight: 500 }} >Business Info</div>
-                            {/* <span style={{ fontSize: 14, color: '#A1A5B7' }}>If you need more info, please check out <Link style={{ color: '#EA2024', textDecoration: 'none' }} to={''}>Help Page.</Link> </span> */}
+                            {/* <span style={{ fontSize: 14, color: '#A1A5B7' }}>If you need more info, please check out <Link style={{ color: '#EA580C', textDecoration: 'none' }} to={''}>Help Page.</Link> </span> */}
                         </Grid>
                         <Grid item xs={12} style={{ marginTop: '1%' }}>
                             <TextField
@@ -98,7 +98,7 @@ export default function Step1({
                                     })}
                                 </Select>
                             </FormControl>
-                            {errors.designator ? <div style={{ color: '#EA2024', fontSize: 12 }}>{errors.designator}</div> : <></>}
+                            {errors.designator ? <div style={{ color: '#EA580C', fontSize: 12 }}>{errors.designator}</div> : <></>}
                         </Grid>
                         <Grid item xs={6}>
                             <FormControl fullWidth>
@@ -116,7 +116,7 @@ export default function Step1({
                                     })}
                                 </Select>
                             </FormControl>
-                            {errors.companyIndustry ? <div style={{ color: '#EA2024', fontSize: 12 }}>{errors.companyIndustry}</div> : <></>}
+                            {errors.companyIndustry ? <div style={{ color: '#EA580C', fontSize: 12 }}>{errors.companyIndustry}</div> : <></>}
                         </Grid>
 
                         <Grid item xs={6}>
@@ -136,7 +136,7 @@ export default function Step1({
                             <Button startIcon={<KeyboardBackspaceIcon />} onClick={onPrev} style={{ background: 'black', color: 'white', margin: '44px 0px 44px', borderRadius: '50px', padding: '1% 3%' }}>
                                 Back
                             </Button>
-                            <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA2024', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
+                            <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA580C', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
                                 Next
                             </Button>
                         </Grid>

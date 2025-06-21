@@ -189,7 +189,7 @@ const Comparison = () => {
     };
 
     const startButton = {
-        background: '#EA2024',
+        background: '#EA580C',
         color: 'white',
         padding: isMobile ? '15px 35px' : '12px 30px',
         borderRadius: '50px',

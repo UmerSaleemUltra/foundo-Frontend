@@ -223,7 +223,7 @@ const AddTransaction = ({ open, setOpen, getAllTransactions, selectedRow, isUpda
                     <Button
                         variant="contained"
                         style={{
-                            textTransform: 'capitalize', background: '#EA2024',
+                            textTransform: 'capitalize', background: '#EA580C',
                             color: 'white', boxShadow: 'none', marginTop: 20,
                             borderRadius: 12, padding: 12, marginLeft: 'auto', display: 'flex'
                         }}

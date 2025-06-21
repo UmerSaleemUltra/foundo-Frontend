@@ -1,4 +1,4 @@
-export const primaryColor = "#EA2024"
+export const primaryColor = "#EA580C"
 
 export const formatDate = (inputDate) => {
     const date = new Date(inputDate);

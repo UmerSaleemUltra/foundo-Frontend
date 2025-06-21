@@ -70,8 +70,8 @@ const AddonServices = () => {
             marginBottom: '5%',
         },
         button: {
-            // backgroundColor: '#EA2024',
-            color: '#EA2024',
+            // backgroundColor: '#EA580C',
+            color: '#EA580C',
             marginTop: '10px',
             textTransform: 'none',
             borderRadius: 12,

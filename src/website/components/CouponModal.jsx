@@ -51,7 +51,7 @@ export default function CouponModal({
                             endIcon={<IoIosArrowForward />}
                             variant="contained"
                             style={{
-                                background: '#EA2024',
+                                background: '#EA580C',
                                 color: 'white',
                                 padding: isMobile ? '15px 35px' : '12px 20px',
                                 borderRadius: '50px',

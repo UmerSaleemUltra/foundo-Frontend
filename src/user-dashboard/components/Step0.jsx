@@ -174,7 +174,7 @@ export default function Step1({
                                         <MenuItem value={'Female'}>Female</MenuItem>
                                     </Select>
                                 </FormControl>
-                                {errors.gender ? <div style={{ color: '#EA2024', fontSize: 12 }}>{errors.gender}</div> : <></>}
+                                {errors.gender ? <div style={{ color: '#EA580C', fontSize: 12 }}>{errors.gender}</div> : <></>}
                             </Grid>
                             <Grid item xs={6} >
                                 <PhoneInput
@@ -196,10 +196,10 @@ export default function Step1({
                                     }}
                                     inputStyle={{ width: '100%' }}
                                 />
-                                {errors.phone ? <div style={{ color: '#EA2024', fontSize: 12 }}>{errors.phone}</div> : <></>}
+                                {errors.phone ? <div style={{ color: '#EA580C', fontSize: 12 }}>{errors.phone}</div> : <></>}
                             </Grid>
                             <Grid item xs={12} style={{ display: 'flex' }} >
-                                <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA2024', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
+                                <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA580C', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
                                     Next
                                 </Button>
                             </Grid>

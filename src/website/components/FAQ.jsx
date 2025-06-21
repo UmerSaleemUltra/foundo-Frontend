@@ -23,15 +23,15 @@ const FAQ = () => {
             color: '#000',
         },
         selectedTab: {
-            background: '#EA2024',
+            background: '#EA580C',
             color: 'white !important',
             borderRadius: '50px',
             padding: '10px 20px',
             margin: '0 5px',
         },
         unselectedTab: {
-            color: '#EA2024',
-            borderColor: '#EA2024',
+            color: '#EA580C',
+            borderColor: '#EA580C',
             borderRadius: '15px',
             padding: '10px 20px',
             margin: '0 5px',
@@ -223,7 +223,7 @@ const FAQ = () => {
                                             cursor: 'pointer',
                                             fontWeight: 500,
                                             fontSize: matches_md ? 14 : 18,
-                                            color: openFaq === index ? '#EA2024' : 'black',
+                                            color: openFaq === index ? '#EA580C' : 'black',
                                         }}
                                         onClick={() => toggleFaq(index)}
                                     >
@@ -268,7 +268,7 @@ const FAQ = () => {
                                             cursor: 'pointer',
                                             fontWeight: 500,
                                             fontSize: matches_md ? 14 : 18,
-                                            color: openFaq === index ? '#EA2024' : 'black',
+                                            color: openFaq === index ? '#EA580C' : 'black',
                                         }}
                                         onClick={() => toggleFaq(index)}
                                     >
@@ -313,7 +313,7 @@ const FAQ = () => {
                                             cursor: 'pointer',
                                             fontWeight: 500,
                                             fontSize: matches_md ? 14 : 18,
-                                            color: openFaq === index ? '#EA2024' : 'black',
+                                            color: openFaq === index ? '#EA580C' : 'black',
                                         }}
                                         onClick={() => toggleFaq(index)}
                                     >

@@ -131,7 +131,7 @@ export default function PricingTabs(props) {
                                 }
                             }}
                             fullWidth variant='contained' className='globalButton' style={{
-                                background: 'linear-gradient(to right, #EA2024, #EA2024)',
+                                background: 'linear-gradient(to right, #EA580C, #EA580C)',
                                 padding: '3% 4%',
                                 margin: '7% 0 5%',
                                 borderRadius: 14,

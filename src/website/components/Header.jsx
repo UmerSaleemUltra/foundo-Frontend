@@ -63,21 +63,21 @@ const Header = () => {
             gap: '10px',
         },
         signInButton: {
-            borderColor: '#EA2024',
+            borderColor: '#EA580C',
             padding: '7px 0',
-            color: '#EA2024',
+            color: '#EA580C',
             borderRadius: 3,
             '&:hover': {
-                borderColor: '#EA2024',
+                borderColor: '#EA580C',
                 backgroundColor: 'white',
             },
             '&:focus': {
                 outline: 'none',
-                borderColor: '#EA2024',
+                borderColor: '#EA580C',
             },
         },
         getStartedButton: {
-            background: '#EA2024',
+            background: '#EA580C',
             color: 'white',
             textTransform: 'capitalize',
             padding: '7px 20px',
@@ -89,7 +89,7 @@ const Header = () => {
             },
             '&:focus': {
                 outline: 'none',
-                backgroundColor: '#EA2024',
+                backgroundColor: '#EA580C',
             },
         },
         loginButton: {
@@ -108,7 +108,7 @@ const Header = () => {
             },
             '&:focus': {
                 outline: 'none',
-                backgroundColor: '#EA2024',
+                backgroundColor: '#EA580C',
             },
         },
         divider: {

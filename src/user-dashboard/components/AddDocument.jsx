@@ -120,7 +120,7 @@ const AddDocument = ({ open, setOpen, categories, company, getAllDocs }) => {
                                 })
                             }
                         </Select>
-                        <FormHelperText sx={{ color: "#EA2024" }}>{error?.category}</FormHelperText>
+                        <FormHelperText sx={{ color: "#EA580C" }}>{error?.category}</FormHelperText>
                     </FormControl>
 
                     <div style={{ display: 'flex', marginTop: 10 }}>
@@ -141,12 +141,12 @@ const AddDocument = ({ open, setOpen, categories, company, getAllDocs }) => {
                             )
                         }
                     </div>
-                    <FormHelperText sx={{ color: "#EA2024" }}>{error?.file}</FormHelperText>
+                    <FormHelperText sx={{ color: "#EA580C" }}>{error?.file}</FormHelperText>
 
                     <Button
                         variant="contained"
                         style={{
-                            textTransform: 'capitalize', background: '#EA2024',
+                            textTransform: 'capitalize', background: '#EA580C',
                             color: 'white', boxShadow: 'none', marginTop: 20,
                             borderRadius: 12, padding: 12, marginLeft: 'auto', display: 'flex'
                         }}

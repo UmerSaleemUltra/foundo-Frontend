@@ -207,7 +207,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
             <Button
               startIcon={<AddIcon />}
               onClick={handleAddMember}
-              style={{ textTransform: 'capitalize', gap: 10, background: '#EA2024', color: 'white' }}
+              style={{ textTransform: 'capitalize', gap: 10, background: '#EA580C', color: 'white' }}
             >
               ADD
             </Button>
@@ -268,7 +268,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
                       inputStyle={{ width: '100%' }}
                     />
                     {member?.errors?.phoneNumber && (
-                      <div style={{ color: '#EA2024', fontSize: 12 }}>{member?.errors?.phoneNumber}</div>
+                      <div style={{ color: '#EA580C', fontSize: 12 }}>{member?.errors?.phoneNumber}</div>
                     )}
                   </Grid>
                   <Grid item md={6} style={{ width: '100%' }}>
@@ -288,7 +288,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
                       </Select>
                     </FormControl>
                     {member?.errors?.roleInCompany && (
-                      <div style={{ color: '#EA2024', fontSize: 12 }}>{member?.errors?.roleInCompany}</div>
+                      <div style={{ color: '#EA580C', fontSize: 12 }}>{member?.errors?.roleInCompany}</div>
                     )}
                   </Grid>
                   <Grid item xs={12}>
@@ -322,7 +322,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
 
                     <div style={{ marginLeft: '2%', alignSelf: 'center' }}>{member?.file?.name}</div>
                     {member?.errors?.passport && (
-                      <div style={{ color: '#EA2024', fontSize: 12 }}>{member?.errors?.passport}</div>
+                      <div style={{ color: '#EA580C', fontSize: 12 }}>{member?.errors?.passport}</div>
                     )}
                   </Grid>
 
@@ -335,7 +335,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
 
 
                   <Grid item xs={12} style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <IconButton onClick={() => handleDeleteMember(member.id)} style={{ color: '#EA2024' }}>
+                    <IconButton onClick={() => handleDeleteMember(member.id)} style={{ color: '#EA580C' }}>
                       <DeleteIcon />
                     </IconButton>
                   </Grid>
@@ -355,7 +355,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
             <Button
               type="submit"
               endIcon={<EastIcon />}
-              style={{ textTransform: 'capitalize', background: '#EA2024', color: 'white' }}
+              style={{ textTransform: 'capitalize', background: '#EA580C', color: 'white' }}
             >
               Next
             </Button> */}
@@ -363,7 +363,7 @@ export default function Step2({ members, setMembers, onPrev, onNext, isResponsib
             <Button startIcon={<KeyboardBackspaceIcon />} onClick={onPrev} style={{ background: 'black', color: 'white', margin: '44px 0px 44px', borderRadius: '50px', padding: '1% 3%' }}>
               Back
             </Button>
-            <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA2024', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
+            <Button endIcon={<EastIcon />} onClick={handleSubmit} style={{ background: '#EA580C', color: 'white', margin: '44px 0px 44px auto', borderRadius: '50px', padding: '1% 3%' }}>
               Next
             </Button>
 
