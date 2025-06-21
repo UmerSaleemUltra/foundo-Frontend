@@ -21,19 +21,20 @@ export default function LoginComp() {
     const matches2 = useMediaQuery(theme.breakpoints.down(800));
     const matches3 = useMediaQuery(theme.breakpoints.down(500));
 
-    const navigate = useNavigate()
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
-    const dispatch = useDispatch()
-    const [loader, setLoader] = useState(false)
-    const { user_data } = useSelector(state => state.user);
+    const [loader, setLoader] = useState(false);
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const { user_data } = useSelector((state) => state.user);
 
     const handleClickShowPassword = () => {
-        setShowPassword((prevShowPassword) => !prevShowPassword);
+        setShowPassword((prev) => !prev);
     };
 
     const handleMouseDownPassword = (event) => {
@@ -42,6 +43,7 @@ export default function LoginComp() {
 
     const validate = () => {
         let valid = true;
+
         if (!email) {
             setEmailError("Email or Phone Number is required");
             valid = false;
@@ -62,32 +64,35 @@ export default function LoginComp() {
         return valid;
     };
 
-   const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (validate()) {
-        try {
-            setLoader(true);
-            const data = await post_data("user/user-login", { email, password });
-            setLoader(false);
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        if (validate()) {
+            try {
+                setLoader(true);
+                const data = await post_data("user/user-login", { email, password });
+                setLoader(false);
 
-            if (data?.status === true) {
-                dispatch(login(data?.data?.user));
-                localStorage.setItem("authToken", data?.data?.token);
-                toast.success("Login Successfully");
-                setEmail('');
-                setPassword('');
-                navigate('/dashboard');
-            } else {
-                toast.error(data?.message || "Invalid credentials");
+                if (data?.status === true) {
+                    dispatch(login(data?.data?.user));
+                    localStorage.setItem("authToken", data?.data?.token);
+                    toast.success("Login Successfully");
+                    setEmail("");
+                    setPassword("");
+                    navigate("/dashboard");
+
+                    // ✅ Retrieve token if needed
+                    const savedToken = localStorage.getItem("authToken");
+                    console.log("Saved Token:", savedToken);
+                } else {
+                    toast.error(data?.message || "Invalid credentials");
+                }
+            } catch (error) {
+                setLoader(false);
+                const message = error?.response?.data?.message || "Network error or server issue";
+                toast.error(message);
             }
-        } catch (error) {
-            setLoader(false);
-            const message = error?.response?.data?.message || "Network error or server issue";
-            toast.error(message);
         }
-    }
-};
-
+    };
 
     return (
         <div style={styles.container}>
