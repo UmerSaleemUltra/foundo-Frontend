@@ -66,32 +66,31 @@ const Header = () => {
             gap: '10px',
         },
         signInButton: {
-            borderColor: '#EA2024',
+            borderColor: '#EA580C',
             padding: '7px 0',
-            color: '#EA2024',
+            color: '#EA580C',
             borderRadius: 3,
             '&:hover': {
-                borderColor: '#EA2024',
                 backgroundColor: 'white',
             },
             '&:focus': {
                 outline: 'none',
-                borderColor: '#EA2024',
+                backgroundColor: '#D95A0B',
             },
         },
         getStartedButton: {
-            background: '#EA2024',
+            background: '#EA580C',
             color: 'white',
             padding: '10px 15px',
             borderRadius: 3,
             boxShadow: 'none',
             '&:hover': {
-                backgroundColor: '#d0191f',
                 boxShadow: 'none',
+                backgroundColor: '#D95A0B',
             },
             '&:focus': {
                 outline: 'none',
-                backgroundColor: '#EA2024',
+                backgroundColor: '#EA580C',
             },
         },
         divider: {
@@ -135,7 +134,7 @@ const Header = () => {
         <div style={styles.container}>
           
             <div style={styles.navContainer}>
-                <img loading="lazy" src="https://buzzfiling.com/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
+                <img loading="lazy" src="/images/logo.svg" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
                 <div style={styles.navItems}>
                     <span onClick={() => {
                         navigate('/');
@@ -184,7 +183,6 @@ const Header = () => {
                     <MenuIcon />
                 </IconButton>
             </div>
-            <div style={styles.divider}></div>
             <Drawer
                 anchor="right"
                 open={drawerOpen}

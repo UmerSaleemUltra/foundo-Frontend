@@ -63,11 +63,13 @@ const HeroSection = () => {
             marginTop: isMobile ? '20px' : '40px',
             flexDirection: isMobile ? 'column' : 'row',
         },
+
+        
         startButton: {
             background: '#EA580C',
             color: 'white',
-            padding: isMobile ? '15px 35px' : '12px 20px',
-            borderRadius: '50px',
+        padding: '10px 15px',
+            borderRadius: 3,
             fontSize: isMobile ? '13px' : '14px',
             boxShadow: 'none',
             textTransform: 'capitalize',
@@ -79,9 +81,8 @@ const HeroSection = () => {
         },
         consultButton: {
             boxShadow: 'none',
-            padding: isMobile ? '15px 33px' : '12px 20px',
-            borderRadius: '50px',
-            borderColor: '#1CA650',
+                padding: '10px 15px',
+            borderRadius: 3,
             color: '#000',
             textTransform: 'capitalize',
             backgroundColor: 'transparent',

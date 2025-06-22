@@ -57,6 +57,24 @@ export default function Footer(props) {
         window.scrollTo(0, 0)
     }
 
+    const style = {
+           consultButton: {
+            boxShadow: 'none',
+                padding: '10px 15px',
+            borderRadius: 3,
+            color: '#000',
+            textTransform: 'capitalize',
+            backgroundColor: 'transparent',
+            fontSize: isMobile ? '13px' : '14px',
+            zIndex: 10,
+            '&:hover': {
+                boxShadow: 'none',
+                borderColor: '#1CA650',
+
+            },
+        },
+    }
+
     return (
         <div>
             <div className='footerSec' style={{ padding: matches_md ? '10% 5%' : '6% 10%' }}>
@@ -150,22 +168,9 @@ export default function Footer(props) {
                     </Grid>
                     <Grid item md={4}>
                         <a href={"https://api.whatsapp.com/send?phone=919770015304&text=Hi%20Leegal%20team!%20I%27m%20interested%20in%20registering%20my%20business%20in%20the%20United%20States.%20Could%20you%20please%20share%20more%20details%20on%20how%20I%20can%20get%20started%3F%0A"} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outlined" startIcon={<FaWhatsapp color='#1CA650' />} style={{
-                                boxShadow: 'none',
-                                padding: isMobile ? '15px 45px' : '12px 20px',
-                                borderRadius: '50px',
-                                borderColor: '#1CA650',
-                                color: '#000',
-                                textTransform: 'capitalize',
-                                backgroundColor: 'transparent',
-                                fontSize: isMobile ? '13px' : '14px',
-                                zIndex: 10,
-                                '&:hover': {
-                                    boxShadow: 'none',
-                                    borderColor: '#d0191f',
-
-                                }
-                            }}>
+                            <Button variant="outlined" sx={style.consultButton} startIcon={<FaWhatsapp color='#1CA650' 
+                            
+                            />}>
                                 WhatsApp Support
                             </Button>
                         </a>
@@ -176,7 +181,7 @@ export default function Footer(props) {
 
                 <Grid container spacing={3}>
                     <Grid item md={4}>
-                        <img src='/images/logo.svg' style={{ width: '35%', marginLeft: '-6%' }} />
+                        <img src='/images/logo.svg' style={{ width: '50%', marginLeft: '-6%' }} />
                         <p style={{ opacity: '70%', fontSize: '15px' }}>
                             Get your U.S. company today, With our expert support at every step, we make it easy to get your company online and running smoothly.
                         </p><br />
