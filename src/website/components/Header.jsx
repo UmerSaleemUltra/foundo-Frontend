@@ -135,7 +135,7 @@ const Header = () => {
         <div style={styles.container}>
           
             <div style={styles.navContainer}>
-                <img loading="lazy" src="/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
+                <img loading="lazy" src="https://buzzfiling.com/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
                 <div style={styles.navItems}>
                     <span onClick={() => {
                         navigate('/');
