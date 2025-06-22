@@ -11,6 +11,8 @@ const Header = () => {
     const theme = useTheme();
     const matches_md = useMediaQuery(theme.breakpoints.down('md'));
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const { user_data } = useSelector((state) => state.user);
+
 
     const handleDrawerToggle = () => {
         setDrawerOpen(!drawerOpen);
