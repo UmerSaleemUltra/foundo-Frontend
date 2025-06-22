@@ -133,9 +133,7 @@ const Header = () => {
 
     return (
         <div style={styles.container}>
-            <div style={styles.headerBar}>
-                Exclusive Discounts for International Entrepreneurs - Available for a Limited Time! Contact Us on WhatsApp.
-            </div>
+          
             <div style={styles.navContainer}>
                 <img loading="lazy" src="/images/buzz-filling-logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
                 <div style={styles.navItems}>
@@ -161,6 +159,26 @@ const Header = () => {
                     <Button
                         onClick={handlecontactbuzzfilling} // Add onClick handler
                         variant="contained" sx={styles.getStartedButton}>Get Started</Button>
+                         {user_data?.is_user ? (
+                <Button
+                    onClick={() => {
+                        navigate('/dashboard');
+                        window.scrollTo(0, 0);
+                    }}
+                    variant="contained"
+                    sx={styles.getStartedButton}
+                >
+                    My Dashboard
+                </Button>
+            ) : (
+                <Button
+                    onClick={() => navigate('/login')}
+                    variant="contained"
+                    sx={styles.getStartedButton}
+                >
+                    Login
+                </Button>
+            )}
                 </div>
                 <IconButton style={styles.menuIcon} onClick={handleDrawerToggle}>
                     <MenuIcon />
@@ -205,7 +223,7 @@ const Header = () => {
                 <Button
                     onClick={() => navigate('/login')}
                     variant="contained"
-                    sx={styles.loginButton}
+                    sx={styles.getStartedButton}
                 >
                     Login
                 </Button>
