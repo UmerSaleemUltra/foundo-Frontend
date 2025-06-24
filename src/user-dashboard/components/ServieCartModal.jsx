@@ -50,7 +50,6 @@ export default function ServieCartModal({ open, setOpen, service, company }) {
             backgroundColor: '#fff',
         },
         purchaseButton: {
-            padding: '9px 20px',
             fontSize: '15px',
             color: '#fff',
             backgroundColor: primaryColor,
@@ -58,8 +57,8 @@ export default function ServieCartModal({ open, setOpen, service, company }) {
             cursor: 'pointer',
             textTransform: 'capitalize',
             width: '100%',
-            borderRadius: 50,
-            marginTop: '20px',
+ padding: '10px 15px',
+            borderRadius: 3,            marginTop: '20px',
             boxShadow: 'none',
         },
         priceRow: {

@@ -7,7 +7,13 @@ import { formatPrice } from '../../constant';
 import { get_data } from '../../api';
 import { useSelector } from 'react-redux';
 
+        
+
+
+
 const OneStopPricing = ({ screen, selectedState }) => {
+
+    
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -35,6 +41,23 @@ const OneStopPricing = ({ screen, selectedState }) => {
     const convertToINR = (usdAmount) => {
         return (usdAmount * exchangeRate).toFixed(2);
     };
+
+    const styles = {
+ startButton: {
+            background: '#EA580C',
+            color: 'white',
+        padding: '10px 15px',
+            borderRadius: 3,
+            fontSize: isMobile ? '13px' : '14px',
+            boxShadow: 'none',
+            textTransform: 'capitalize',
+            zIndex: 10,
+            '&:hover': {
+                boxShadow: 'none',
+                backgroundColor: '#d0191f',
+            },
+        },
+        }
 
     return (
         <section className="pricing-section" style={{
@@ -102,6 +125,7 @@ const OneStopPricing = ({ screen, selectedState }) => {
                     )
                 }
                 <Button
+                sx={styles.startButton}
                     onClick={() => {
                         if (screen === 'pricing') {
                             if (user_data?.is_user) {
@@ -128,20 +152,7 @@ const OneStopPricing = ({ screen, selectedState }) => {
 
                     }}
 
-                    endIcon={<IoIosArrowForward />} style={{
-                        background: '#EA580C',
-                        color: 'white',
-                        padding: isMobile ? '15px 35px' : '12px 30px',
-                        borderRadius: '50px',
-                        fontSize: isMobile ? '13px' : '14px',
-                        boxShadow: 'none',
-                        marginTop: '4%',
-                        textTransform: 'capitalize',
-                        zIndex: 10,
-                        '&:hover': {
-                            backgroundColor: '#d0191f',
-                        },
-                    }}>
+                    endIcon={<IoIosArrowForward />}>
                     {screen === 'pricing' ? 'Start My LLC' : 'Start Your Business'}
                 </Button>
                 {/* <p className="process-time">4 Weeks Process</p> */}

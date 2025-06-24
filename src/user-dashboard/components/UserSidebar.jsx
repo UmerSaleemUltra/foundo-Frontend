@@ -47,6 +47,8 @@ export default function UserSidebar({
 
     const sidebar_items_div = {
         padding: '2% 8%',
+        marginTop: '15%',
+        gap: '5%',
     };
 
     const handleListItem = (item, i) => {
@@ -116,7 +118,7 @@ export default function UserSidebar({
             <div style={user_dashboard_sidebar} className="sidebar-container">
                 <div style={logo_section}>
                     <img src='/images/logo.svg'
-                        style={{ width: 140, cursor: 'pointer', margin: '3% 0' }}
+                        style={{ width: 200, cursor: 'pointer', margin: '-50px 0' }}
                     />
                 </div>
                 <div style={sidebar_items_div}>

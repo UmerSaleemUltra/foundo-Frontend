@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from 'react-icons/fa6';
 import { primaryColor } from '../../constant';
+import { Map, MapOutlined } from '@mui/icons-material';
 
 export default function Footer(props) {
 
@@ -31,6 +32,11 @@ export default function Footer(props) {
         {
             title: 'Pricing',
             link: '/pricing'
+        },
+
+          {
+            title: 'About',
+            link: '/About'
         },
         {
             title: 'FAQ',
@@ -57,7 +63,7 @@ export default function Footer(props) {
         window.scrollTo(0, 0)
     }
 
-    const style = {
+    const styles = {
            consultButton: {
             boxShadow: 'none',
                 padding: '10px 15px',
@@ -73,10 +79,19 @@ export default function Footer(props) {
 
             },
         },
-    }
+        logo: {
+          width: matches_md ? '250px' : '250px',
+          cursor: 'pointer',
+          marginTop: matches_md ? '-100px' : '-130px',
+         marginLeft: matches_md ? '-40px': '-40px',
 
-    return (
-        <div>
+
+    }
+    
+}
+
+return (
+    <div>
             <div className='footerSec' style={{ padding: matches_md ? '10% 5%' : '6% 10%' }}>
                 <Grid container spacing={1}>
                     <Grid item md={2} style={{ width: '50%' }}>
@@ -168,7 +183,7 @@ export default function Footer(props) {
                     </Grid>
                     <Grid item md={4}>
                         <a href={"https://api.whatsapp.com/send?phone=919770015304&text=Hi%20Leegal%20team!%20I%27m%20interested%20in%20registering%20my%20business%20in%20the%20United%20States.%20Could%20you%20please%20share%20more%20details%20on%20how%20I%20can%20get%20started%3F%0A"} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outlined" sx={style.consultButton} startIcon={<FaWhatsapp color='#1CA650' 
+                            <Button variant="outlined" sx={styles.consultButton} startIcon={<FaWhatsapp color='#1CA650' 
                             
                             />}>
                                 WhatsApp Support
@@ -181,8 +196,8 @@ export default function Footer(props) {
 
                 <Grid container spacing={3}>
                     <Grid item md={4}>
-                        <img src='/images/logo.svg' style={{ width: '50%', marginLeft: '-6%' }} />
-                        <p style={{ opacity: '70%', fontSize: '15px' }}>
+                        <img  src='/images/logo.svg' style={styles.logo} />
+                        <p style={{ opacity: '70%', fontSize: '15px', marginTop: '-80px' }}>
                             Get your U.S. company today, With our expert support at every step, we make it easy to get your company online and running smoothly.
                         </p><br />
                         <div style={{
@@ -199,19 +214,19 @@ export default function Footer(props) {
                             alignItems: 'center',
                             marginTop: '3%'
                         }}><PhoneIcon fontSize='small' style={{ marginRight: '3%' }} />+91 9770015304</div>
+                        <div style={{
+                            opacity: '70%',
+                            fontSize: '14px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            marginTop: '3%'
+                        }}><MapOutlined fontSize='small' style={{ marginRight: '3%' }} />2nd Floor, 172 S, P.E.C.H.S.,
+Shams Center, Plaza
+Extreme Commerce, Tariq Rd, Karachi.</div>
                     </Grid>
 
 
 
-                    <Grid item md={8}>
-                        <p style={{ opacity: '70%' }}>© 2025 Leegal. All rights reserved.</p>
-
-                        <p style={{ opacity: '70%' }}>Leegal products may not be available to all customers. Terms of Condition apply and are subject to change.</p>
-
-                        <p style={{ opacity: '70%', fontSize: '15px' }}>
-                            We are not a law firm, nor can we offer official legal advice. What you see on our website, and any of our communication over email, Whatsapp, Slack, SMS, Zoom call, Intercom, social media is purely for general and educational matters, and should not be taken as official legal advice. By using our website and service, you are explicitly accepting our Terms of Service, Privacy Policy.
-                        </p>
-                    </Grid>
                 </Grid>
 
 

@@ -191,8 +191,8 @@ const Comparison = () => {
     const startButton = {
         background: '#EA580C',
         color: 'white',
-        padding: isMobile ? '15px 35px' : '12px 30px',
-        borderRadius: '50px',
+        padding: '10px 15px',
+            borderRadius: 3,
         fontSize: isMobile ? '13px' : '14px',
         boxShadow: 'none',
         textTransform: 'capitalize',

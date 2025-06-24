@@ -1,10 +1,13 @@
-import { Autocomplete, Button, Grid, TextField, useMediaQuery, useTheme } from "@mui/material";
+import { Autocomplete, Button, Grid, TextField, } from "@mui/material";
 import { IoIosArrowForward } from "react-icons/io";
 import { formatPrice, states } from "../../constant";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { get_data } from "../../api";
 import { useSelector } from "react-redux";
+import { useTheme, useMediaQuery } from "@mui/material";
+
+
 
 
 
@@ -12,6 +15,27 @@ export default function StateFee() {
 
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const styles = {
+
+        startButton: {
+            background: '#EA580C',
+            color: 'white',
+            padding: '10px 15px',
+            borderRadius: 3,
+            fontSize: isMobile ? '13px' : '14px',
+            boxShadow: 'none',
+            textTransform: 'capitalize',
+            zIndex: 10,
+            '&:hover': {
+                boxShadow: 'none',
+                backgroundColor: '#d0191f',
+            },
+        },
+        }
+        
+    
+
     const [selectedState, setSelectedState] = useState(null);
     const navigate = useNavigate()
     const { user_data } = useSelector(state => state.user);
@@ -131,6 +155,7 @@ export default function StateFee() {
                         </Grid>
 
                         <Button
+                        sx={styles.startButton}
                             onClick={() => {
                                 localStorage.setItem('selectedState', JSON.stringify(selectedState?.label));
                                 localStorage.setItem('selectedStateFee', JSON.stringify(selectedState?.fee));
@@ -145,20 +170,7 @@ export default function StateFee() {
                                     window.scrollTo(0, 0);
                                 }
                             }}
-                            endIcon={<IoIosArrowForward />} style={{
-                                background: '#EA580C',
-                                color: 'white',
-                                padding: isMobile ? '15px 35px' : '12px 30px',
-                                borderRadius: '50px',
-                                fontSize: isMobile ? '13px' : '14px',
-                                boxShadow: 'none',
-                                marginTop: '4%',
-                                textTransform: 'capitalize',
-                                zIndex: 10,
-                                '&:hover': {
-                                    backgroundColor: '#d0191f',
-                                },
-                            }}>Start My LLC {!isMobile && <>in {selectedState?.label}</>}</Button>
+                            endIcon={<IoIosArrowForward />} >Start My LLC {!isMobile && <>in {selectedState?.label}</>}</Button>
                         <p className="process-time" style={{ textAlign: 'center', margin: '4% 0 0' }}>Starts at $249 + State Fees</p>
                         {/* <p className="process-time" style={{ textAlign: 'center', margin: '4% 0 0' }}>Starts at {formatPrice(convertToINR(Math.ceil(249)))} + State Fees</p> */}
                     </div>

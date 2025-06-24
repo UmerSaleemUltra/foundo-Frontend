@@ -9,6 +9,7 @@ const Header = () => {
 
     const navigate = useNavigate();
     const theme = useTheme();
+        const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
     const matches_md = useMediaQuery(theme.breakpoints.down('md'));
     const [drawerOpen, setDrawerOpen] = useState(false);
     const { user_data } = useSelector((state) => state.user);
@@ -19,13 +20,16 @@ const Header = () => {
     };
 
     
+const handlestartbusiness = () => {
+        navigate('/pricing');
+        window.scrollTo(0, 0);
+if (user_data?.is_user) {
+   navigate('/dashboard');
+   window.scrollTo(0, 0);
+}
 
-    const handlecontactbuzzfilling  = () => {
-  const phoneNumber = "923394882800"; // Without '+' and spaces
-  const message = "Hi Buzz Filing team! I'm interested in registering my business in the United States. Could you please share more details on how I can get started?";
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
-};
+    }
+
 
 
     const styles = {
@@ -51,8 +55,10 @@ const Header = () => {
             height: 70,
         },
         logo: {
-            width: matches_md ? '40%' : '15%',
+            width: matches_md ? '50%' : '20%',
             cursor: 'pointer',
+marginLeft: isMobile ? '0px' : '-80px'
+            
         },
         navItems: {
             display: matches_md ? 'none' : 'flex',
@@ -86,7 +92,7 @@ const Header = () => {
             boxShadow: 'none',
             '&:hover': {
                 boxShadow: 'none',
-                backgroundColor: '#D95A0B',
+                backgroundColor: '#d0191f',
             },
             '&:focus': {
                 outline: 'none',
@@ -156,8 +162,9 @@ const Header = () => {
                 <div style={styles.buttonContainer}>
                     {/* <Button variant="outlined" sx={styles.signInButton}>Sign In</Button> */}
                     <Button
-                        onClick={handlecontactbuzzfilling} // Add onClick handler
+                        onClick={handlestartbusiness} // Add onClick handler
                         variant="contained" sx={styles.getStartedButton}>Get Started</Button>
+                        
                          {user_data?.is_user ? (
                 <Button
                     onClick={() => {
@@ -203,7 +210,7 @@ const Header = () => {
                     <div style={styles.drawerButtonContainer}>
                         {/* <Button variant="outlined" sx={styles.signInButton}>Sign In</Button> */}
                         <Button
-                            onClick={handlecontactbuzzfilling} // Add onClick handler
+                            onClick={handlestartbusiness} // Add onClick handler
                             variant="contained" sx={styles.getStartedButton}>Get Started</Button>
 
                              {user_data?.is_user ? (
@@ -231,6 +238,6 @@ const Header = () => {
             </Drawer>
         </div>
     );
-};
+}
 
 export default Header;

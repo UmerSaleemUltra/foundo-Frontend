@@ -177,10 +177,10 @@ const styles = {
         marginBottom: '10px',
     },
     signInButton: {
-        padding: '9px 20px',
+        padding: '10px 15px',
         backgroundColor: primaryColor,
         color: '#fff',
-        borderRadius: 50,
+        borderRadius: 3,
         width: '100%',
         marginTop: '4%',
         boxShadow: 'none',

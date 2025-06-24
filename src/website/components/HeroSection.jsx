@@ -83,6 +83,7 @@ const HeroSection = () => {
             boxShadow: 'none',
                 padding: '10px 15px',
             borderRadius: 3,
+            borderColor: '#1CA650',
             color: '#000',
             textTransform: 'capitalize',
             backgroundColor: 'transparent',

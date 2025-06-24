@@ -6,10 +6,30 @@ import toast from 'react-hot-toast';
 import { Button, useMediaQuery, useTheme } from '@mui/material';
 import { IoIosArrowForward } from 'react-icons/io';
 
-const Contact = ({ screen }) => {
 
-    const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+const Contact = ({ screen }) => {
+        const theme = useTheme();
+        const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const styles = {
+        startButton: {
+            background: '#EA580C',
+            color: 'white',
+        padding: '10px 15px',
+            borderRadius: 3,
+            fontSize: isMobile ? '13px' : '14px',
+            boxShadow: 'none',
+            textTransform: 'capitalize',
+            zIndex: 10,
+            '&:hover': {
+                boxShadow: 'none',
+                backgroundColor: '#d0191f',
+            },
+        },
+    }
+
+
+ 
     const [loading, setLoading] = useState(false)
     const [formData, setFormData] = useState({
         firstName: '',
@@ -171,23 +191,13 @@ const Contact = ({ screen }) => {
                     </div>
                     <div className="form-footer">
                         <Button
+                            sx={styles.startButton}
                             variant='contained'
                             endIcon={<IoIosArrowForward />}
                             type="submit" className="submit-btn"
                             disabled={loading}
-                            style={{
-                                background: '#EA580C',
-                                color: 'white',
-                                padding: isMobile ? '10px 25px' : '10px 25px',
-                                borderRadius: '50px',
-                                fontSize: isMobile ? '13px' : '14px',
-                                boxShadow: 'none',
-                                textTransform: 'capitalize',
-                                zIndex: 10,
-                                '&:hover': {
-                                    backgroundColor: '#d0191f',
-                                },
-                            }}
+                       
+                        
                         >
                             {loading ? 'Submit...' : 'Submit'}
                         </Button>

@@ -11,17 +11,18 @@ const AboutComp = () => {
     const navigate = useNavigate()
 
     const startButton = {
-        background: '#fff',
-        color: primaryColor,
-        padding: isMobile ? '15px 35px' : '12px 30px',
-        borderRadius: '50px',
-        fontSize: isMobile ? '13px' : '14px',
-        boxShadow: 'none',
-        textTransform: 'capitalize',
-        zIndex: 10,
-        '&:hover': {
-            backgroundColor: '#d0191f',
-        },
+          background: '#fff',
+           color: 'black',
+           padding: '10px 15px',
+            borderRadius: 3,
+            fontSize: isMobile ? '13px' : '14px',
+            boxShadow: 'none',
+            textTransform: 'capitalize',
+            zIndex: 10,
+            '&:hover': {
+                boxShadow: 'none',
+                backgroundColor: '#d0191f',
+            },
     }
 
     return (

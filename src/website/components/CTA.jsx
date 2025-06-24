@@ -57,8 +57,8 @@ const CTA = () => {
             color: 'white',
             fontWeight: 500,
             width: isMobile ? '100%' : '30%',
-            padding: '15px 20px',
-            borderRadius: '4px',
+              padding: '10px 15px',
+            borderRadius: 3,
             '&:hover': {
                 backgroundColor: '#d0191f',
             },

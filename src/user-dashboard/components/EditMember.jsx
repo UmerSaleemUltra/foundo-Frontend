@@ -184,7 +184,8 @@ export default function EditMember({
                                 onClick={() => document.getElementById('fileInput').click()}
                             />
                             <input type="file" id="fileInput" onChange={handleFile} style={{ display: 'none' }} />
-                            <CameraAlt fontSize='small' style={{ position: 'absolute', bottom: "1%", left: "53%", color: '#000', backgroundColor: '#fff', borderRadius: 50, padding: 5 }} />
+                            <CameraAlt fontSize='small' style={{ position: 'absolute', bottom: "1%", left: "53%", color: '#000', backgroundColor: '#fff', borderRadius: 3,         padding: '10px 15px',
+ }} />
                         </div>
 
                         <div style={{ marginBottom: '3%' }}>

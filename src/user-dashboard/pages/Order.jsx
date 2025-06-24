@@ -99,11 +99,10 @@ const styles = {
         marginBottom: '10px',
     },
     signInButton: {
-        padding: '9px 20px',
         backgroundColor: primaryColor,
         color: '#fff',
-        borderRadius: 50,
-        width: '100%',
+ padding: '10px 15px',
+            borderRadius: 3,        width: '100%',
         marginTop: '4%',
         boxShadow: 'none',
         fontSize: '1rem',

@@ -170,15 +170,14 @@ export default function OtpComponent({
     }
 
     const button = {
-        padding: '10px 0',
         borderRadius: '8px',
         backgroundColor: primaryColor,
         color: 'white',
         fontSize: 15,
         width: '85%',
         margin: '0 auto 4%',
-        borderRadius: 50,
-        textTransform: 'capitalize',
+ padding: '10px 15px',
+            borderRadius: 3,        textTransform: 'capitalize',
         cursor: 'pointer',
         border: 'none',
     }
