@@ -11,9 +11,9 @@ const AboutComp = () => {
     const navigate = useNavigate()
 
     const startButton = {
-          background: '#fff',
-           color: 'black',
-           padding: '10px 15px',
+       background: '#ffffff',
+            color: 'black',
+        padding: '10px 15px',
             borderRadius: 3,
             fontSize: isMobile ? '13px' : '14px',
             boxShadow: 'none',
@@ -23,7 +23,7 @@ const AboutComp = () => {
                 boxShadow: 'none',
                 backgroundColor: '#d0191f',
             },
-    }
+        }
 
     return (
         <section className="about-section" style={{ position: 'relative' }}>
