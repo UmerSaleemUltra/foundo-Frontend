@@ -39,9 +39,11 @@ const AboutComp = () => {
                 </div>
             </div>
             <div className="about-action">
-                <p style={{ textAlign: isMobile ? 'center' : 'left' }}>
-                    Get your U.S. company today, With our expert support at every step, we make it easy to get your company online and running smoothly.
+                <p>
+                    We help you start, run and grow your business in the United States. <br />
+                    Our team of experts is here to guide you through every step of the process.
                 </p>
+                
                 <Button
                     onClick={() => {
                         navigate('/pricing')
