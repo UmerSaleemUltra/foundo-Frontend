@@ -19,17 +19,17 @@ const Footer = () => {
     <Box sx={{ backgroundColor: '#fff', color: '#222', position: 'relative', px: { xs: 3, md: 10 }, py: 8 }}>
       <Grid container spacing={6}>
         {/* Logo and Contact */}
+               <img style={{marginTop : '-200px'}} src="/images/logo.png" height={200} width={200} alt="" />
+
         <Grid item xs={12} md={4}>
-          <Box sx={{ mb: 3 }}>
-            <Typography variant="h5" sx={{ fontWeight: 'bold', color: '#000' }}>
-              <Box component="span" sx={{ color: '#007bff' }}>▶</Box>ncorz
-            </Typography>
-            <Typography variant="subtitle2" sx={{ mt: 1 }}>
+          
+
+           
+
+          <Stack style={{marginTop: '-200px'}} spacing={1.5}>
+             <Typography variant="subtitle2" sx={{ mt: 1 }}>
               Start and Run Your U.S. Business<br />Hassle-Free With Us
             </Typography>
-          </Box>
-
-          <Stack spacing={1.5}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
               <EmailIcon fontSize="small" />
               <Link href="mailto:support@ncorz.com" underline="hover" color="inherit">support@ncorz.com</Link>
