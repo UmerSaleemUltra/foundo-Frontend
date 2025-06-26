@@ -82,7 +82,7 @@ export default function StateFee() {
     return (
         <>
             <Grid container spacing={0} style={{
-                background: '#F7F8F9',
+                background: 'transparent',
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'left',

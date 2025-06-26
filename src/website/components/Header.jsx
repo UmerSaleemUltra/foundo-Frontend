@@ -55,9 +55,9 @@ if (user_data?.is_user) {
             height: 70,
         },
         logo: {
-            width: matches_md ? '50%' : '20%',
-            cursor: 'pointer',
-marginLeft: isMobile ? '0px' : '-80px'
+  width: isMobile ? '120px' : matches_md ? '180px' : '200px',
+  cursor: 'pointer',
+marginLeft: isMobile ? '0px' : '-40px'
             
         },
         navItems: {
@@ -140,7 +140,7 @@ marginLeft: isMobile ? '0px' : '-80px'
         <div style={styles.container}>
           
             <div style={styles.navContainer}>
-                <img loading="lazy" src="/images/logo.svg" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
+                <img loading="lazy" src="/images/logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
                 <div style={styles.navItems}>
                     <span onClick={() => {
                         navigate('/');

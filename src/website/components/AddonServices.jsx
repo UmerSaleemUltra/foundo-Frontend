@@ -23,7 +23,7 @@ const AddonServices = () => {
 
     const styles = {
         container: {
-            background: '#F7F8F9',
+            background: 'transparent',
             width: '100%',
             display: 'flex',
             justifyContent: 'center',
@@ -93,9 +93,8 @@ const AddonServices = () => {
 
     return (
         <>
-            <img src="/images/wave.svg" style={{ width: '100%', marginBottom: isMobile ? '-3%' : '-1%' }} />
             <Grid container spacing={0} style={{
-                background: '#F7F8F9',
+                background: 'transparent',
                 width: '100%',
                 display: 'flex',
                 justifyContent: 'left',

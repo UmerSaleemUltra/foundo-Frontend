@@ -170,6 +170,7 @@ const BusinessFormation = () => {
             overflowY: isMobile ? '' : 'scroll',
             borderLeft: '1px solid #eee',
             boxSizing: 'border-box',
+
         },
         sidebar: {
             width: '100%',
@@ -177,7 +178,8 @@ const BusinessFormation = () => {
             boxSizing: 'border-box',
         },
         logo: {
-            width: '40%',
+            width: '80%',
+            marginTop: '-120px',
         }
     }
 
@@ -564,7 +566,7 @@ const BusinessFormation = () => {
                 <div style={styles.sidebar}>
                     <div>
                         <Title level={3}>
-                            <img loading="lazy" src="/images/logo.svg" alt="LOGO" style={styles.logo} />
+                            <img loading="lazy" src="/images/logo.png" alt="LOGO" style={styles.logo} />
                         </Title>
                         {/* <div style={{ textAlign: 'center', fontSize: '12px', fontWeight: 'bold' }} >
                             Business Formation Made Simple

@@ -115,7 +115,7 @@ export default function UserSidebar({
 
             <div style={user_dashboard_sidebar} className="sidebar-container">
                 <div style={logo_section}>
-                    <img src='/images/logo.svg'
+                    <img src='/images/logo.png'
                         style={{ width: 140, cursor: 'pointer', margin: '3% 0' }}
                     />
                 </div>

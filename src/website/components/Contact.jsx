@@ -103,7 +103,7 @@ const Contact = ({ screen }) => {
     };
 
     return (
-        <section className="contact-section" style={{ background: screen === 'contact' ? 'white' : '#F8F9FA' }}>
+        <section className="contact-section" style={{ background: screen === 'contact' ? 'transparent' : 'transparent' }}>
             <div className="contact-info">
                 <div className="contact-header">
                     <div className="icon"><img src="/images/qa-img.svg" alt="Q&A Icon" /></div>

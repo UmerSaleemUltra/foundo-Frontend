@@ -33,8 +33,8 @@ export default function Home() {
             <OneStopPricing />
             <Brands />
             <Comparision />
-            <Testimonials />
-            <LogoSlider />
+            {/* <Testimonials />
+            <LogoSlider /> */}
             <AddonServices />
             <AboutComp />
             <StateFee />

@@ -115,7 +115,6 @@ const HeroSection = () => {
             marginTop: isMobile ? '7%' : '3%',
             width: isMobile ? '95%' : '75%',
             borderRadius: '15px 15px 0 0 ',
-            boxShadow: '0 0 30px rgb(219, 219, 219)'
         },
         newOverviewImage: {
             zIndex: 2,

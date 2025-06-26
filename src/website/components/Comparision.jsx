@@ -224,7 +224,7 @@ const Comparison = () => {
                                 </p>
                             </th>
                             <th style={{ ...styles.th, ...styles.thLeegal }}>
-                                <img src="/images/logo.svg" style={{ width: 120 }} alt="Leegal logo" />
+                                <img src="/images/logo.png" style={{ width: 180 }} alt="Leegal logo" />
                             </th>
                             <th style={styles.th}>
                                 <img src="/images/workhy.png" style={{ width: 120 }} className="workhyImg" alt="Workhy logo" />
