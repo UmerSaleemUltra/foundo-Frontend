@@ -84,9 +84,7 @@ const Footer = () => {
       </Box>
 
       {/* Right-side image */}
-      <Box
-       
-      />
+      <Box />
     </Box>
   );
 };
