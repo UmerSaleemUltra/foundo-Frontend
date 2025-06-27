@@ -36,10 +36,10 @@ export default function Home() {
             {/* <Testimonials />
             <LogoSlider /> */}
             <AddonServices />
-            <AboutComp />
             <StateFee />
             <FAQ />
             <Contact />
+            <AboutComp />
             <Footer />
         </>
     )
