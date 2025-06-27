@@ -39,7 +39,7 @@ export default function Home() {
             <StateFee />
             <FAQ />
             <Contact />
-            <AboutComp />
+           <AboutComp />
             <Footer />
         </>
     )

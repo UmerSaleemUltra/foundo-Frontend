@@ -157,10 +157,11 @@ export default function PrivacyPolicy() {
                 </div>
 
             </div>
-            <AboutComp />
             <div style={{ marginTop: '-5%' }}>
                 <Contact />
             </div>
+                        <AboutComp />
+
             <Footer />
         </>
     )

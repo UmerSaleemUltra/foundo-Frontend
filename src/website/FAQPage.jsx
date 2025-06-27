@@ -10,11 +10,12 @@ export default function FAQPage() {
         <>
             <Header />
             <FAQ />
-            <div style={{ marginTop: '5%' }}>
-                <AboutComp />
-            </div>
+           
             <div style={{ marginTop: '-10%' }}>
                 <Contact />
+            </div>
+             <div style={{ marginTop: '5%' }}>
+                <AboutComp />
             </div>
             <Footer />
         </>
