@@ -64,7 +64,7 @@ const Header = () => {
     logo: {
       width: isTabletOrBelow ? '200px' : '200px',
       cursor: 'pointer',
-      marginLeft: isTabletOrBelow ? '0px' : '-40px',
+      marginLeft: isTabletOrBelow ? '-20px' : '-40px',
     },
     navItems: {
       display: isTabletOrBelow ? 'none' : 'flex',
