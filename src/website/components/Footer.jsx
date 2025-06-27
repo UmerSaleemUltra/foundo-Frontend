@@ -176,7 +176,7 @@ export default function Footer(props) {
 
                 <Grid container spacing={3}>
                     <Grid item md={4}>
-                        <img src='/images/new.png' style={{ width: '50%', marginLeft: '-6%', marginTop : '-50%' }} />
+                        <img src='/images/new.png' style={{ width: '50%', marginLeft: '-6%', marginTop : '-20%' }} />
                         <p style={{ opacity: '70%', fontSize: '15px', marginTop : '-20px' }}>
                             Get your U.S. company today, With our expert support at every step, we make it easy to get your company online and running smoothly.
                         </p><br />
