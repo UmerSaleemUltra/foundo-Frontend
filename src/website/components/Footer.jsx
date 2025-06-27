@@ -39,17 +39,16 @@ export default function Footer(props) {
     ]
 
     const addonsItems1 = [
-        'Premium Business Address',
-        'ITIN Application',
-        'Annual Report Filing',
-        'Seller Permit / Resale Certificate',
+        'Business Address',
+        'LLC State Filing',
+        'EIN Registration',
+        'Digital Document Access',
     ]
 
     const addonsItems2 = [
-        'US Dedicated IP VPS',
-        'Business Website Setup',
-        'Company Dissolution',
-        'Company Amendment',
+        'Digital Business Bank Account',
+        'Registered Agent for 1 Year',
+        'All Government Fees',
     ]
 
     const handleItemClick = (item) => {
