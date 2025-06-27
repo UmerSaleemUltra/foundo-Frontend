@@ -1,243 +1,184 @@
-import { Button, IconButton, useMediaQuery, Drawer, useTheme } from "@mui/material";
+import { Button, IconButton, useMediaQuery, Drawer } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from "react";
 import { useSelector } from 'react-redux';
-
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import LiveHelpOutlinedIcon from "@mui/icons-material/LiveHelpOutlined";
+import DashboardIcon from "@mui/icons-material/Dashboard";
+import LoginIcon from "@mui/icons-material/Login";
 
 const Header = () => {
+  const navigate = useNavigate();
+  const isTabletOrBelow = useMediaQuery('(max-width:970px)');
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const { user_data } = useSelector((state) => state.user);
 
-    const navigate = useNavigate();
-    const theme = useTheme();
-        const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
-    const matches_md = useMediaQuery(theme.breakpoints.down('md'));
-    const [drawerOpen, setDrawerOpen] = useState(false);
-    const { user_data } = useSelector((state) => state.user);
+  const handleDrawerToggle = () => setDrawerOpen(!drawerOpen);
 
-
-    const handleDrawerToggle = () => {
-        setDrawerOpen(!drawerOpen);
-    };
-
-    
-const handlestartbusiness = () => {
-        navigate('/pricing');
-        window.scrollTo(0, 0);
-if (user_data?.is_user) {
-   navigate('/dashboard');
-   window.scrollTo(0, 0);
-}
-
+  const handlestartbusiness = () => {
+    if (user_data?.is_user) {
+      navigate('/dashboard');
+    } else {
+      navigate('/pricing');
     }
+    window.scrollTo(0, 0);
+  };
 
+  const navLinks = [
+   { label: "Home", path: "/", icon: <HomeOutlinedIcon fontSize="small" /> },
+    {
+      label: "Pricing",
+      path: "/pricing",
+      icon: <AttachMoneyIcon fontSize="small" />,
+    },
+    {
+      label: "About",
+      path: "/about",
+      icon: <InfoOutlinedIcon fontSize="small" />,
+    },
+    {
+      label: "FAQ",
+      path: "/faq",
+      icon: <LiveHelpOutlinedIcon fontSize="small" />,
+    }
+  ];
 
+  const styles = {
+    container: {
+      width: '100%',
+      boxSizing: 'border-box',
+      position: 'relative',
+      overflow: 'hidden',
+      backgroundColor: 'white',
+    },
+    navContainer: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      padding: isTabletOrBelow ? '0 10px' : '0 80px',
+      height: 70,
+    },
+    logo: {
+      width: isTabletOrBelow ? '200px' : '200px',
+      cursor: 'pointer',
+      marginLeft: isTabletOrBelow ? '0px' : '-40px',
+    },
+    navItems: {
+      display: isTabletOrBelow ? 'none' : 'flex',
+      gap: '50px',
+      color: 'black',
+      fontSize: 15,
+      cursor: 'pointer',
+    },
+    buttonContainer: {
+      display: isTabletOrBelow ? 'none' : 'flex',
+      gap: '10px',
+    },
+    getStartedButton: {
+      background: '#EA580C',
+      color: 'white',
+      padding: '10px 15px',
+      borderRadius: 3,
+      boxShadow: 'none',
+      '&:hover': {
+        backgroundColor: '#d0191f',
+      },
+    },
+    menuIcon: {
+      display: isTabletOrBelow ? 'block' : 'none',
+      color: 'black',
+      fontSize: '36px',
+      marginLeft: 'auto',
+      cursor: 'pointer',
+    },
+    drawerContent: {
+      padding: '20px',
+      backgroundColor: 'white',
+      height: '100%',
+      display: 'flex',
+      flexDirection: 'column',
+      gap: '20px',
+    },
+    drawerNavItem: {
+      fontSize: '18px',
+      fontWeight: '400',
+      cursor: 'pointer',
+      color: 'black',
+    },
+  };
 
-    const styles = {
-        container: {
-            width: '100%',
-            boxSizing: 'border-box',
-            position: 'relative',
-            overflow: 'hidden',
-        },
-        headerBar: {
-            background: 'black',
-            color: 'white',
-            padding: '10px',
-            fontSize: matches_md ? '10px' : 14,
-            height: matches_md ? 'fit-content' : '',
-            textAlign: 'center',
-        },
-        navContainer: {
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            padding: matches_md ? '0 10px' : '0 80px',
-            height: 70,
-        },
-        logo: {
-  width: isMobile ? '120px' : matches_md ? '180px' : '200px',
-  cursor: 'pointer',
-marginLeft: isMobile ? '0px' : '-40px'
-            
-        },
-        navItems: {
-            display: matches_md ? 'none' : 'flex',
-            gap: '50px',
-            color: 'black',
-            fontSize: 15,
-            cursor: 'pointer',
-        },
-        buttonContainer: {
-            display: matches_md ? 'none' : 'flex',
-            gap: '10px',
-        },
-        signInButton: {
-            borderColor: '#EA580C',
-            padding: '7px 0',
-            color: '#EA580C',
-            borderRadius: 3,
-            '&:hover': {
-                backgroundColor: 'white',
-            },
-            '&:focus': {
-                outline: 'none',
-                backgroundColor: '#D95A0B',
-            },
-        },
-        getStartedButton: {
-            background: '#EA580C',
-            color: 'white',
-            padding: '10px 15px',
-            borderRadius: 3,
-            boxShadow: 'none',
-            '&:hover': {
-                boxShadow: 'none',
-                backgroundColor: '#d0191f',
-            },
-            '&:focus': {
-                outline: 'none',
-                backgroundColor: '#EA580C',
-            },
-        },
-        divider: {
-            width: '100%',
-            height: '1px',
-            backgroundColor: '#BDBDBD',
-        },
-        menuIcon: {
-            display: matches_md ? 'block' : 'none',
-            fontSize: '36px',
-            color: 'black',
-            cursor: 'pointer',
-            marginLeft: 'auto',
-        },
-        drawerContent: {
-            display: 'flex',
-            flexDirection: 'column',
-            padding: '20px',
-            gap: '10px',
-            backgroundColor: 'white',
-            color: 'black',
-        },
-        drawerNavItem: {
-            color: 'black',
-            fontSize: '18px',
-            textDecoration: 'none',
-            cursor: 'pointer',
-            padding: '10px 0',
-            fontWeight: '400',
-        },
-        drawerButtonContainer: {
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            marginTop: '20px',
-        },
-    };
+  return (
+    <div style={styles.container}>
+      <div style={styles.navContainer}>
+        <img
+          loading="lazy"
+          src="/images/logo.png"
+          alt="LOGO"
+          style={styles.logo}
+          onClick={() => navigate('/')}
+        />
 
-    return (
-        <div style={styles.container}>
-          
-            <div style={styles.navContainer}>
-                <img loading="lazy" src="/images/logo.png" alt="LOGO" style={styles.logo} onClick={() => navigate('/')} />
-                <div style={styles.navItems}>
-                    <span onClick={() => {
-                        navigate('/');
-                        window.scrollTo(0, 0);
-                    }}>Home</span>
-                    <span onClick={() => {
-                        navigate('/pricing');
-                        window.scrollTo(0, 0);
-                    }}>Pricing</span>
-                    <span onClick={() => {
-                        navigate('/about');
-                        window.scrollTo(0, 0);
-                    }}>About</span>
-                    <span onClick={() => {
-                        navigate('/faq');
-                        window.scrollTo(0, 0);
-                    }}>FAQ</span>
-                </div>
-                <div style={styles.buttonContainer}>
-                    {/* <Button variant="outlined" sx={styles.signInButton}>Sign In</Button> */}
-                    <Button
-                        onClick={handlestartbusiness} // Add onClick handler
-                        variant="contained" sx={styles.getStartedButton}>Get Started</Button>
-                        
-                         {user_data?.is_user ? (
-                <Button
-                    onClick={() => {
-                        navigate('/dashboard');
-                        window.scrollTo(0, 0);
-                    }}
-                    variant="contained"
-                    sx={styles.getStartedButton}
-                >
-                    My Dashboard
-                </Button>
-            ) : (
-                <Button
-                    onClick={() => navigate('/login')}
-                    variant="contained"
-                    sx={styles.getStartedButton}
-                >
-                    Login
-                </Button>
-            )}
-                </div>
-                <IconButton style={styles.menuIcon} onClick={handleDrawerToggle}>
-                    <MenuIcon />
-                </IconButton>
-            </div>
-            <Drawer
-                anchor="right"
-                open={drawerOpen}
-                onClose={handleDrawerToggle}
-                PaperProps={{
-                    style: {
-                        backgroundColor: 'white',
-                        color: 'black',
-                        width: '280px',
-                    },
-                }}
-            >
-                <div style={styles.drawerContent}>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/'); handleDrawerToggle(); }}>Home</div>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/pricing'); handleDrawerToggle(); }}>Pricing</div>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/about'); handleDrawerToggle(); }}>About</div>
-                    <div style={styles.drawerNavItem} onClick={() => { navigate('/faq'); handleDrawerToggle(); }}>FAQ</div>
-                    <div style={styles.drawerButtonContainer}>
-                        {/* <Button variant="outlined" sx={styles.signInButton}>Sign In</Button> */}
-                        <Button
-                            onClick={handlestartbusiness} // Add onClick handler
-                            variant="contained" sx={styles.getStartedButton}>Get Started</Button>
-
-                             {user_data?.is_user ? (
-                <Button
-                    onClick={() => {
-                        navigate('/dashboard');
-                        window.scrollTo(0, 0);
-                    }}
-                    variant="contained"
-                    sx={styles.getStartedButton}
-                >
-                    My Dashboard
-                </Button>
-            ) : (
-                <Button
-                    onClick={() => navigate('/login')}
-                    variant="contained"
-                    sx={styles.getStartedButton}
-                >
-                    Login
-                </Button>
-            )}
-                    </div>
-                </div>
-            </Drawer>
+        <div style={styles.navItems}>
+          {navLinks.map(({ label, path }) => (
+            <span key={path} onClick={() => { navigate(path); window.scrollTo(0, 0); }}>
+              {label}
+            </span>
+          ))}
         </div>
-    );
-}
+
+        <div style={styles.buttonContainer}>
+          <Button onClick={handlestartbusiness} variant="contained" sx={styles.getStartedButton}>
+            Get Started
+          </Button>
+          {user_data?.is_user ? (
+            <Button onClick={() => navigate('/dashboard')} variant="contained" sx={styles.getStartedButton}>
+              My Dashboard
+            </Button>
+          ) : (
+            <Button onClick={() => navigate('/login')} variant="contained" sx={styles.getStartedButton}>
+              Login
+            </Button>
+          )}
+        </div>
+
+        <IconButton style={styles.menuIcon} onClick={handleDrawerToggle}>
+          <MenuIcon />
+        </IconButton>
+      </div>
+
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={handleDrawerToggle}
+        PaperProps={{ style: { width: 280 } }}
+      >
+        <div style={styles.drawerContent}>
+          {navLinks.map(({ label, path, icon }) => (
+            <div key={path} style={styles.drawerNavItem} onClick={() => { navigate(path); handleDrawerToggle(); }}>
+              {label}
+            </div>
+          ))}
+
+          <Button onClick={() => { handlestartbusiness(); handleDrawerToggle(); }} variant="contained" sx={styles.getStartedButton}>
+            Get Started
+          </Button>
+
+          {user_data?.is_user ? (
+            <Button onClick={() => { navigate('/dashboard'); handleDrawerToggle(); }} variant="contained" sx={styles.getStartedButton}>
+              My Dashboard
+            </Button>
+          ) : (
+            <Button onClick={() => { navigate('/login'); handleDrawerToggle(); }} variant="contained" sx={styles.getStartedButton}>
+              Login
+            </Button>
+          )}
+        </div>
+      </Drawer>
+    </div>
+  );
+};
 
 export default Header;
