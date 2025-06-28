@@ -27,7 +27,7 @@ export default function ScreenLoading() {
         <div style={{ height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', width: '100%' }}>
             <Box sx={{ width: 250 }}>
                 <center>
-                    <img src='/images/logo.png' className='loading-img' style={{ width: 180, marginBottom: '2%' }} />
+                    <img src='/images/logo.png' className='loading-img' style={{ width: 200, marginBottom: '2%' }} />
                     {/* <LinearProgress variant="determinate" value={progress} /> */}
                 </center>
             </Box>

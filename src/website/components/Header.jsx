@@ -34,16 +34,17 @@ const Header = () => {
       path: "/pricing",
       icon: <AttachMoneyIcon fontSize="small" />,
     },
-    {
-      label: "About",
-      path: "/about",
-      icon: <InfoOutlinedIcon fontSize="small" />,
+ {
+      label: "Contact",
+      path: "/Contact",
+      icon: <LiveHelpOutlinedIcon fontSize="small" />,
     },
     {
       label: "FAQ",
       path: "/faq",
       icon: <LiveHelpOutlinedIcon fontSize="small" />,
-    }
+    },
+    
   ];
 
   const styles = {

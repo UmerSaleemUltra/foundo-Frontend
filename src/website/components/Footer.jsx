@@ -52,7 +52,7 @@ export default function Footer(props) {
     ]
 
     const handleItemClick = (item) => {
-        navigate(item?.link)
+        navigate('/pricing')
         window.scrollTo(0, 0)
     }
 
