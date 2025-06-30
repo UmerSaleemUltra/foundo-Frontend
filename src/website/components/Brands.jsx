@@ -4,6 +4,7 @@ import { useTheme, useMediaQuery, Typography } from '@mui/material';
 const Brands = () => {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
     const [images] = useState([
         "/images/mercury1.jpg",
         "/images/stripe.png",
@@ -16,16 +17,19 @@ const Brands = () => {
         const styleTag = document.createElement("style");
         styleTag.innerHTML = `
             @keyframes scroll {
-                0% { transform: translateX(0%); }
+                0% { transform: translateX(0); }
                 100% { transform: translateX(-50%); }
             }
             .marquee-wrapper {
                 display: flex;
-                animation: scroll 25s linear infinite;
-                will-change: transform;
+                animation: scroll 30s linear infinite;
             }
             .marquee-container:hover .marquee-wrapper {
                 animation-play-state: paused;
+            }
+            .brand-img:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s ease-in-out;
             }
         `;
         document.head.appendChild(styleTag);
@@ -36,15 +40,15 @@ const Brands = () => {
 
     const styles = {
         outerBox: {
-            borderTop: '1px solid #ddd',
-            padding: isMobile ? '30px 10px' : '40px 60px',
+
+            padding: isMobile ? '30px 15px' : '50px 80px',
         },
         heading: {
-            fontSize: isMobile ? '18px' : '22px',
+            fontSize: isMobile ? '20px' : '26px',
             fontWeight: 600,
-            color: '#333',
+            color: '#222',
             textAlign: 'center',
-            marginBottom: '20px',
+            marginBottom: '30px',
         },
         container: {
             overflow: 'hidden',
@@ -52,7 +56,7 @@ const Brands = () => {
         },
         imageWrapper: {
             display: 'flex',
-            gap: isMobile ? '20px' : '40px',
+            gap: isMobile ? '20px' : '60px',
             alignItems: 'center',
             padding: '10px 0',
             flexShrink: 0,
@@ -69,26 +73,27 @@ const Brands = () => {
         }
     };
 
-    const renderedImages = [...images, ...images]; // For smooth infinite loop
+    const renderedImages = [...images, ...images];
 
     return (
         <div style={styles.outerBox}>
             <Typography style={styles.heading}>
-                Trusted by global partners
+                Trusted by Global Partners
             </Typography>
             <div className="marquee-container" style={styles.container}>
                 <div className="marquee-wrapper">
                     <div style={styles.imageWrapper}>
                         {renderedImages.map((src, index) => {
                             let imageStyle = { ...styles.image };
-                            if (src === "/images/mercury1.jpg") imageStyle = { ...imageStyle, ...styles.mercuryImage };
-                            else if (src === "/images/paypal.png") imageStyle = { ...imageStyle, ...styles.paypalImage };
+                            if (src.includes("mercury")) imageStyle = { ...imageStyle, ...styles.mercuryImage };
+                            else if (src.includes("paypal")) imageStyle = { ...imageStyle, ...styles.paypalImage };
 
                             return (
                                 <img
                                     key={`${src}-${index}`}
                                     src={src}
                                     alt={`Brand ${index}`}
+                                    className="brand-img"
                                     loading="lazy"
                                     style={imageStyle}
                                 />
