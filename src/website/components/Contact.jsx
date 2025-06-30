@@ -7,6 +7,7 @@ import { Button, useMediaQuery, useTheme } from '@mui/material';
 import { IoIosArrowForward } from 'react-icons/io';
 
 
+
 const Contact = ({ screen }) => {
         const theme = useTheme();
         const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
@@ -106,7 +107,7 @@ const Contact = ({ screen }) => {
         <section className="contact-section" style={{ background: screen === 'contact' ? 'transparent' : 'transparent' }}>
             <div className="contact-info">
                 <div className="contact-header">
-                    <div className="icon"><img src="/images/contact.svg" alt="Q&A Icon" /></div>
+                    <div className="icon"><img src="/images/Contact.svg" alt="Q&A Icon" /></div>
                     <h2 style={{ margin: 0, color: '#000' }}>GET IN TOUCH</h2>
                     <p style={{ width: '80%' }}>
                         We’re here to help! Whether you have questions, need assistance, or simply want to learn more about what we offer, don’t hesitate to reach out to us.
