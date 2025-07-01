@@ -62,7 +62,7 @@ export default function CouponModal({
                                 zIndex: 10,
                                 '&:hover': {
                                     boxShadow: 'none',
-                                    backgroundColor: '#d0191f',
+                                    backgroundColor: '#C24505',
                                 },
                             }}
                         >

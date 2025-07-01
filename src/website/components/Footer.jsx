@@ -225,7 +225,7 @@ More Services
                                 zIndex: 10,
                                 '&:hover': {
                                     boxShadow: 'none',
-                                    borderColor: '#d0191f',
+                                    borderColor: '#C24505',
 
                                 }
                             }}>

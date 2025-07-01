@@ -24,7 +24,7 @@ const Contact = ({ screen }) => {
             zIndex: 10,
             '&:hover': {
                 boxShadow: 'none',
-                backgroundColor: '#d0191f',
+                backgroundColor: '#C24505',
             },
         },
     }

@@ -60,7 +60,7 @@ const CTA = () => {
               padding: '10px 15px',
             borderRadius: 3,
             '&:hover': {
-                backgroundColor: '#d0191f',
+                backgroundColor: '#C24505',
             },
         },
         imageContainer: {

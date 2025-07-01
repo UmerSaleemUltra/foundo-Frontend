@@ -85,7 +85,7 @@ const Header = () => {
       borderRadius: 3,
       boxShadow: 'none',
       '&:hover': {
-        backgroundColor: '#d0191f',
+        backgroundColor: '#C24505',
       },
     },
     menuIcon: {
